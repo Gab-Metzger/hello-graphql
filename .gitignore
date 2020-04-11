@@ -1,0 +1,17 @@
+# Depedencies
+node_modules
+
+# Environment files
+.env
+
+# Logs
+logs
+
+# Docker volumes
+pg-data
+postgres
+postgres-data
+
+# Builds
+dist
+

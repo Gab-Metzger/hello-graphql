@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  api:
+    build: .
+    container_name: hello-graphql
+    command: yarn start
+    volumes:
+      - .:/usr/app/:delegated
+      - /usr/app/node_modules
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:12
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: hello-graphql
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U postgres -d hello-graphql -h 127.0.0.1
+      interval: 5s
+volumes:
+  postgres-data: ~
