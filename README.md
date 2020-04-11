@@ -4,7 +4,7 @@ My boilerplate code for building a GrahpQL api using Node and Typescript
 
 ## Getting Started
 
-First step is to install all depedencies using yarn or npm
+First step is to install all dependencies using yarn or npm
 
 ```sh
 yarn
