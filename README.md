@@ -23,7 +23,7 @@ This command will launch two containers
 - `api` container using a **node-slim** image to serve the typescript application
 - `postgres` container using a **postgres** image to setup the database
 
-### Prisma
+## Prisma
 
 This GraphQL example api is using [Prisma](https://www.prisma.io/) as a modern ORM.
 
