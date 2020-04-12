@@ -12,6 +12,13 @@ yarn
 # npm install
 ```
 
+Then you should create the environment file. You can use the example one provided in the project
+`.env.example`
+
+```sh
+cp .env.example .env
+```
+
 The best way to get ready quickly is by using the Docker configuration included in the repository
 
 ```sh
