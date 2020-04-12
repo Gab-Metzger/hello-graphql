@@ -21,8 +21,9 @@
   "homepage": "https://github.com/gab_metzger/hello-graphql#README",
   "dependencies": {
     "@prisma/client": "^2.0.0-beta.2",
+    "apollo-server": "^2.12.0",
     "dotenv": "^8.2.0",
-    "graphql-yoga": "^1.18.3"
+    "graphql": "^15.0.0"
   },
   "devDependencies": {
     "@prisma/cli": "^2.0.0-beta.2",

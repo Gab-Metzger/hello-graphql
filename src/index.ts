@@ -1,22 +1,25 @@
 require('dotenv').config();
-import { GraphQLServer } from 'graphql-yoga';
+import { ApolloServer, gql } from 'apollo-server';
 
-const typeDefs = `
+const typeDefs = gql`
   type Query {
-    hello(name: String): String!
+    hello: String
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: (_, { name }) => `Hello ${name || 'World'}`,
+    hello: () =>
+      `Say hello to the new Apollo Server! A production ready GraphQL server with an incredible getting started experience.`,
   },
 };
 
-const server = new GraphQLServer({ typeDefs, resolvers });
-server.start(
-  {
+const server = new ApolloServer({ typeDefs, resolvers });
+
+server
+  .listen({
     port: process.env.PORT,
-  },
-  () => console.log(`🚀 Server is running on http://localhost:${process.env.PORT}`),
-);
+  })
+  .then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
+  });
