@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/gab_metzger/hello-graphql#README",
   "dependencies": {
+    "@prisma/client": "^2.0.0-beta.2",
     "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3"
   },
