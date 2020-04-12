@@ -70,7 +70,7 @@ model User {
 And then migrate the schema to the database.
 
 ```sh
-# generate a migration file names 'init' in the 'prisma/migrations' directory
+# generate a migration file named 'init' in the 'prisma/migrations' directory
 yarn prisma migrate save --name init --experimental
 # execute the migrations
 yarn prisma migrate up --experimental
