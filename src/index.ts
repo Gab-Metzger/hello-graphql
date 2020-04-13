@@ -1,20 +1,18 @@
 require('dotenv').config();
-import { ApolloServer, gql } from 'apollo-server';
+import { ApolloServer } from 'apollo-server';
+import { makeSchema, objectType } from '@nexus/schema';
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () =>
-      `Say hello to the new Apollo Server! A production ready GraphQL server with an incredible getting started experience.`,
+const Query = objectType({
+  name: 'Query',
+  definition(t) {
+    t.string('hello', {
+      nullable: true,
+      resolve: () => `Say hello to the new Apollo Server using NexusJS.`,
+    });
   },
-};
+});
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ schema: makeSchema({ types: [Query] }) });
 
 server
   .listen({
